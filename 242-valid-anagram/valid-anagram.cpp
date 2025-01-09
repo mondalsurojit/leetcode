@@ -3,25 +3,24 @@ public:
     bool isAnagram(string s, string t) {
         int n = s.length();
         int m = t.length();
-        string temp = t;
-        bool found;
+        bool flag;
+        vector<int> arr(26, 0);
         if (n != m) {
             return false;
         } else {
-            vector<string> arr(n, "");
             for (int i = 0; i < n; i++) {
-                for (int j = 0; j < temp.length(); j++) {
-                    if (s[i] == temp[j]) {
-                        arr[i] = t[j];
-                        temp.erase(j, 1);
-                        found = true;
-                        break;
-                    }
+                arr[s[i] - 'a'] = arr[s[i] - 'a'] + 1;
+                arr[t[i] - 'a'] = arr[t[i] - 'a'] - 1;
+            }
+            for (int j = 0; j < 26; j++) {
+                if (arr[j] != 0) {
+                    flag = false;
+                    break;
+                } else {
+                    flag = true;
                 }
-                if (!found)
-                    return false;
             }
         }
-        return (temp.empty());
+        return flag;
     }
 };
