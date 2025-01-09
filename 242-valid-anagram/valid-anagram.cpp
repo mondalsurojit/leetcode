@@ -3,7 +3,7 @@ public:
     bool isAnagram(string s, string t) {
         int n = s.length();
         int m = t.length();
-        vector<int> arr(26, 0);
+        int arr[26]={0};
         if (n != m) {
             return false;
         }
