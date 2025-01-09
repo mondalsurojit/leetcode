@@ -8,7 +8,7 @@ public:
         int fs_n = fs.length();
 
         string fs_copy = fs;
-        vector<int> final_lps(n + 1, 0);
+        vector<int> final_lps(n + 99, 0);
         int lpds = final_lps[0], lpdi = 0;
 
         if (n == 0)
