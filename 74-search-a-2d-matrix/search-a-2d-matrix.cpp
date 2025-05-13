@@ -6,7 +6,7 @@ public:
         int m, n;
         while(start <= end){
             mid = start + (end-start)/2;
-            position(mid, cols, m, n);
+            m = mid / cols, n = mid % cols;
             if(matrix[m][n] == target){
               return true;
             }else if(matrix[m][n] > target){
@@ -17,10 +17,4 @@ public:
         }
         return false;
     }
-
-void position(int mid, int cols, int &m, int &n) {
-    m = mid / cols;
-    n = mid % cols;
-}
-
 };
