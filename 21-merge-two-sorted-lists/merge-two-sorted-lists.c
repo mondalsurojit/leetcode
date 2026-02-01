@@ -21,8 +21,6 @@ struct ListNode* createNode(struct ListNode* lastNodeAddress) {
 struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
     struct ListNode *l1ptr = list1, *l2ptr = list2, *l3head = NULL,
                     *l3ptr = NULL;
-    int l1val, l2val;
-
     while (l1ptr != NULL || l2ptr != NULL) {
         if (l3ptr == NULL) {
             l3head = createNode(l3ptr);
